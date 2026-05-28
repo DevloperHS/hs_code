@@ -1,3 +1,4 @@
+import { EmptyBorder } from "./border";
 import { StatusBar } from "./status-bar";
 
 //props
@@ -10,7 +11,14 @@ export function InputBar({ onSubmit, disabled = false}: Props) {
     return (    
         <box width="100%" alignItems="center">
             <box
-                // TODO: add left border
+                border={["left"]}
+                borderColor="cyan"
+                width="100%"
+                customBorderChars={{
+                    ...EmptyBorder,
+                    vertical: "┃",
+                    bottomLeft: "┃",
+                }}
             >
 
                 <box
